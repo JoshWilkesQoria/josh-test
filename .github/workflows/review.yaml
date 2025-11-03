@@ -1,0 +1,9 @@
+on:
+  pull_request:
+  merge_group: # so the merge queue sees the check
+jobs:
+  qa_gate:
+    runs-on: ubuntu-latest
+    environment: staging # has required reviewers = QA
+    steps:
+      - run: echo "waiting for QA approval"
